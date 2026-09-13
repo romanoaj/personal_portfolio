@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" shape-rendering="crispEdges" role="img" aria-label="Pixel art teacup">
+  <g fill="#1c1216">
+    <path d="M17 3h4v3h-2v3h-3V6h1zm9 1h4v3h-2v4h-3V7h1zm-5 7h4v3h-2v4h-3v-4h1z"/>
+    <path d="M8 17h29v3h4v4h3v9h-3v4h-7v3H14v-3h-3v-4H8z"/>
+    <path d="M8 39h30v2h5v4H5v-4h3z"/>
+  </g>
+  <path fill="#2b7581" d="M11 20h23v13h-3v4H16v-3h-3v-4h-2z"/>
+  <path fill="#1f5966" d="M13 28h5v6h13v3H16v-3h-3z"/>
+  <path fill="#d8c794" d="M12 20h21v3H12z"/>
+  <path fill="#5a2e24" d="M14 21h17v3H14z"/>
+  <path fill="#f0c75e" d="M13 20h8v2h-8zm4 6h3v6h-3z"/>
+  <path fill="#2b7581" d="M35 22h4v3h2v6h-2v3h-5v-3h4v-6h-3z"/>
+  <path fill="#c79a3b" d="M9 41h28v2H9z"/>
+  <path fill="#7d5728" d="M13 43h25v1H10v-1z"/>
+  <g fill="#8f7a56">
+    <path d="M17 4h2v2h-2zm9 1h2v2h-2zm-5 7h2v2h-2z"/>
+  </g>
+</svg>
