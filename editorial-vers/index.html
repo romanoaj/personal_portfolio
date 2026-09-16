@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name \u2014 Portfolio</title>
+<meta name="description" content="Portfolio of Your Name \u2014 research, experience, and work.">
+
+<!-- Open Graph: makes the link preview nicely on LinkedIn / Slack / iMessage -->
+<meta property="og:title" content="Your Name \u2014 Portfolio">
+<meta property="og:description" content="Research, experience, and work.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/og-image.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2393A683'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F8F4EA' font-family='Georgia,serif'%3EY%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/index-grid.css">
+<link rel="stylesheet" href="css/modal.css">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a href="#top" class="site-header__name" data-site="name">Your Name</a>
+    <nav class="site-header__nav" aria-label="Primary">
+      <a href="#index" class="label">Index</a>
+      <button type="button" class="label" data-entry="resume">R\u00e9sum\u00e9</button>
+      <button type="button" class="label" data-entry="contact">Contact</button>
+      <span class="site-header__divider" aria-hidden="true"></span>
+      <a href="#" class="label" data-site-href="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" class="label" data-site-href="github" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__kicker label">
+          <svg class="icon" viewBox="0 0 60 60"><use href="#icon-flourish"></use></svg>
+          Portfolio &amp; Research Notes
+        </p>
+        <h1 class="hero__name" data-site="name">Your Name</h1>
+        <p class="hero__role" data-site="role">Researcher \u00b7 Writer \u00b7 Designer</p>
+        <p class="hero__intro">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. A couple of sentences
+          introducing what you do, who you do it for, and what you're looking for next \u2014
+          replace this with your own elevator pitch.
+        </p>
+        <div class="hero__cta">
+          <a href="#index" class="btn btn--solid">View my work</a>
+          <button type="button" class="btn btn--outline" data-entry="contact">Get in touch</button>
+        </div>
+      </div>
+
+      <div class="hero__portrait" id="heroPortrait">
+        <img src="assets/images/portrait.jpg" alt="Portrait of Your Name" loading="lazy"
+          onerror="this.style.display='none'; document.getElementById('heroPortrait').classList.add('is-missing');">
+        <svg class="hero__portrait-icon" viewBox="0 0 120 200"><use href="#icon-fern"></use></svg>
+        <span class="hero__portrait-text">Add a portrait photo here &mdash; assets/images/portrait.jpg</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INDEX ================= -->
+  <section id="index">
+    <div class="wrap">
+      <div class="section-heading">
+        <h2>Contents</h2>
+        <div class="rule"></div>
+      </div>
+
+      <ul class="index-list">
+        <li><button type="button" class="index-row" data-entry="about">
+          <span class="index-row__num label">01</span>
+          <span class="index-row__title">About Me</span>
+          <span class="index-row__teaser">A little context on who I am and how I work.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="research">
+          <span class="index-row__num label">02</span>
+          <span class="index-row__title">Research</span>
+          <span class="index-row__teaser">Questions I'm chasing, and where they've been published.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="education">
+          <span class="index-row__num label">03</span>
+          <span class="index-row__title">Education</span>
+          <span class="index-row__teaser">Degrees, coursework, and the paths that led here.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="experience">
+          <span class="index-row__num label">04</span>
+          <span class="index-row__title">Experience</span>
+          <span class="index-row__teaser">Roles and responsibilities, in brief.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="skills">
+          <span class="index-row__num label">05</span>
+          <span class="index-row__title">Skills</span>
+          <span class="index-row__teaser">Methods, tools, and languages I reach for.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="resume">
+          <span class="index-row__num label">06</span>
+          <span class="index-row__title">R\u00e9sum\u00e9</span>
+          <span class="index-row__teaser">The full picture, ready to download.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="interests">
+          <span class="index-row__num label">07</span>
+          <span class="index-row__title">Interests</span>
+          <span class="index-row__teaser">What I read about, think about, ask about.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="hobbies">
+          <span class="index-row__num label">08</span>
+          <span class="index-row__title">Hobbies</span>
+          <span class="index-row__teaser">What I get up to when I'm not working.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+
+        <li><button type="button" class="index-row" data-entry="contact">
+          <span class="index-row__num label">09</span>
+          <span class="index-row__title">Contact</span>
+          <span class="index-row__teaser">Say hello \u2014 I'd love to hear from you.</span>
+          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+        </button></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__name" data-site="name">Your Name</p>
+        <p class="site-footer__tag">Thanks for stopping by. This page is built to travel well \u2014 attach it, link it, or just send it along.</p>
+      </div>
+      <div class="site-footer__links">
+        <a href="#" data-site-href="mailto">Email</a>
+        <a href="#" data-site-href="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" data-site-href="github" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="wrap site-footer__bottom">
+      <span>&copy; <span id="year"></span> <span data-site="name">Your Name</span></span>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= ENTRY POPUP ================= -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="entry" id="entryPanel" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
+    <button type="button" class="entry__close" id="entryClose" aria-label="Close">Close &#10005;</button>
+    <div class="entry__scroll">
+      <p class="entry__kicker label" id="entryKicker"></p>
+      <h2 class="entry__title" id="entryTitle"></h2>
+      <div class="entry__rule"></div>
+      <div class="entry__body" id="entryBody"></div>
+      <p class="entry__folio" id="entryFolio"></p>
+    </div>
+    <svg class="entry__ornament" viewBox="0 0 120 200"><use href="#icon-seedpod"></use></svg>
+  </div>
+</div>
+
+<!-- ================= INLINE SVG SPRITE ================= -->
+<svg style="display:none">
+  <defs>
+    <g id="icon-fern"><path d="M60 196 C58 150 58 100 60 20" />
+  <path d="M60 40 C50 34 38 34 28 42" />
+  <path d="M60 55 C48 48 34 48 22 58" />
+  <path d="M60 70 C46 62 30 63 16 74" />
+  <path d="M60 85 C45 76 28 78 12 90" />
+  <path d="M60 100 C44 90 26 93 9 106" />
+  <path d="M60 115 C44 104 25 108 7 122" />
+  <path d="M60 40 C70 34 82 34 92 42" />
+  <path d="M60 55 C72 48 86 48 98 58" />
+  <path d="M60 70 C74 62 90 63 104 74" />
+  <path d="M60 85 C75 76 92 78 108 90" />
+  <path d="M60 100 C76 90 94 93 111 106" />
+  <path d="M60 115 C76 104 95 108 113 122" />
+  <path d="M60 20 C56 14 56 8 60 4 C64 8 64 14 60 20 Z" /></g>
+    <g id="icon-seedpod"><path d="M60 196 L58 100" />
+  <ellipse cx="60" cy="70" rx="16" ry="22" />
+  <path d="M60 48 L60 20" />
+  <path d="M60 48 L44 26" />
+  <path d="M60 48 L76 26" />
+  <path d="M52 52 L34 40" />
+  <path d="M68 52 L86 40" />
+  <path d="M48 66 L26 62" />
+  <path d="M72 66 L94 62" />
+  <path d="M48 82 L28 90" />
+  <path d="M72 82 L92 90" />
+  <path d="M56 90 L46 108" />
+  <path d="M64 90 L74 108" /></g>
+    <g id="icon-flourish"><path d="M30 4 L30 56" />
+  <path d="M6 30 L54 30" />
+  <path d="M12 12 L48 48" />
+  <path d="M48 12 L12 48" />
+  <circle cx="30" cy="30" r="4.5" fill="currentColor" stroke="none" /></g>
+  </defs>
+</svg>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  if (typeof SITE_INFO !== "undefined") {
+    document.querySelectorAll('[data-site-href="mailto"]').forEach((el) => {
+      el.setAttribute("href", "mailto:" + SITE_INFO.email);
+    });
+  }
+</script>
+</body>
+</html>
