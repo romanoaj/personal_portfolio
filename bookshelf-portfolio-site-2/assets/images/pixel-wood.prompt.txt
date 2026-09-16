@@ -1,0 +1,10 @@
+Use case: stylized-concept
+Asset type: seamless website surface texture for a full-screen interactive bookshelf
+Input images: Images 1–5 are style, palette, pixel-density, and atmosphere references only; do not copy their exact layouts or assets.
+Primary request: Create an original tileable dark chestnut wood grain texture in a cozy 8-bit/16-bit farming-RPG-inspired pixel-art aesthetic. It will be overlaid on CSS-drawn bookshelf boards, so it must read as wood at close range without containing shelves, books, objects, frames, scenery, or text.
+Style/medium: crisp intentional pixel art; chunky clusters and restrained dithering; no blur, no painterly strokes.
+Composition/framing: flat orthographic surface texture, square, evenly lit, seamless edges, no perspective.
+Lighting/mood: dim warm lamplight; dusty vintage librarian warmth; subtly magical.
+Color palette: dark chestnut, walnut, near-black aubergine shadows, muted burnt-orange and antique-gold highlights.
+Materials/textures: visible horizontal wood grain, a few age marks and tiny nicks, low contrast enough for UI legibility.
+Constraints: seamless/tileable; no text; no logos; no watermark; no books; no props; no border; no vignette; no large knots or focal element.

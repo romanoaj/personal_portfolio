@@ -1,0 +1,33 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Pastel sage, warm paper, and a soft charcoal ink — with a single rust
+   accent used sparingly. Edit here to re-theme the whole site.
+   ========================================================================== */
+
+:root {
+  /* ---- Paper / ground ---- */
+  --cream:       #F8F4EA;   /* page background */
+  --paper:       #F1ECDC;   /* card / modal background, one shade deeper */
+  --paper-line:  #DAD3BD;   /* hairline rules on paper */
+
+  /* ---- Ink ---- */
+  --charcoal:      #2B2822;
+  --charcoal-soft: #5B5748;
+  --charcoal-faint:#8B8672;
+
+  /* ---- Sage (primary accent) ---- */
+  --sage:       #93A683;
+  --sage-deep:  #647454;
+  --sage-pale:  #E7EBDD;
+
+  /* ---- Rust (secondary accent, used sparingly) ---- */
+  --rust: #B5613A;
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body:    'Lora', Georgia, serif;
+  --font-ui:      'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(.22,1,.36,1);
+}
