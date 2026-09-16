@@ -1,0 +1,15 @@
+<svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M60 196 L58 100" />
+  <ellipse cx="60" cy="70" rx="16" ry="22" />
+  <path d="M60 48 L60 20" />
+  <path d="M60 48 L44 26" />
+  <path d="M60 48 L76 26" />
+  <path d="M52 52 L34 40" />
+  <path d="M68 52 L86 40" />
+  <path d="M48 66 L26 62" />
+  <path d="M72 66 L94 62" />
+  <path d="M48 82 L28 90" />
+  <path d="M72 82 L92 90" />
+  <path d="M56 90 L46 108" />
+  <path d="M64 90 L74 108" />
+</svg>
