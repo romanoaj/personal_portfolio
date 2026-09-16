@@ -27,30 +27,32 @@
  */
 
 const SITE_INFO = {
-  name: "Your Name",
-  role: "Researcher \u00b7 Writer \u00b7 Designer",
-  email: "hello@example.com",
-  linkedin: "https://linkedin.com/in/yourname",
-  github: "https://github.com/yourusername",
-  location: "City, State \u2014 placeholder"
+  name: "Ava Romano",
+  role: "Student \u00b7 Researcher \u00b7 Human",
+  email: "ajromano@calpoly.edu",
+  linkedin: "https://www.linkedin.com/in/ava-romano-593b66241/",
+  github: "https://github.com/romanoaj"
 };
 
 const ENTRIES = {
 
   about: {
-    kicker: "01 \u2014 About",
+    // kicker: "01 \u2014 About",
+    // kicker: "get to know me !",
     title: "About Me",
     folio: "\u2014 01 \u2014",
     body: [
       { type: "image", caption: "Portrait photo", src: "assets/images/about-portrait.jpg" },
-      { type: "paragraph", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, a couple of sentences about who you are and what you care about." },
-      { type: "paragraph", text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat \u2014 a little more on your path, your approach, or what led you here." },
-      { type: "quote", text: "A short personal motto or line you like goes here." }
+      { type: "paragraph", text: "Hello!" },
+      { type: "paragraph", text: "My name is Ava. I was born and raised in Seattle, Washington (the most beautiful place on Earth). I'm currently a student at Cal Poly - San Luis Obispo, where I'm double majoring in Computer Science and Geography." },
+      { type: "paragraph", text: "I define myself by my curiosity. I love to ask questions, broaden my worldview, and make interdisciplinary connections." },
+      { type: "paragraph", text: "I often get asked why I'm double majoring in two seemingly very different topics, and the answer is simple -- I really love both. I believe my understanding of topics in one discipline enhances my ability to make connections in another." }
+      // { type: "quote", text: "A short personal motto or line you like goes here." }
     ]
   },
 
   research: {
-    kicker: "02 \u2014 Research",
+    // kicker: "i could talk about this all day !",
     title: "Research",
     folio: "\u2014 02 \u2014",
     body: [
@@ -70,25 +72,26 @@ const ENTRIES = {
   },
 
   education: {
-    kicker: "03 \u2014 Education",
+    // kicker: "though learning is a lifelong pursuit !",
     title: "Education",
     folio: "\u2014 03 \u2014",
     body: [
       { type: "entry",
-        heading: "Degree Name \u2014 Institution",
-        meta: "Year \u2013 Year",
-        bullets: ["Relevant coursework or focus area, placeholder.", "Honors, thesis title, or activities, placeholder."]
+        heading: "Bachelor's of Science in Computer Science \u2014 Cal Poly SLO",
+        meta: "2022 \u2013 2027",
+        bullets: ["Areas of Interest: Computer Vision, Machine Learning"]
+        
       },
       { type: "entry",
-        heading: "Degree Name \u2014 Institution",
-        meta: "Year \u2013 Year",
-        bullets: ["Relevant coursework or focus area, placeholder."]
+        heading: "Bachelor's of Science in Geography and Anthropology \u2014 Cal Poly SLO",
+        meta: "2022 \u2013 2027",
+        bullets: ["Areas of Interest: GIS, Remote Sensing, Environmental Conservation Research"]
       }
     ]
   },
 
   experience: {
-    kicker: "04 \u2014 Experience",
+    // kicker: "applying the skills !",
     title: "Experience",
     folio: "\u2014 04 \u2014",
     body: [
@@ -111,7 +114,8 @@ const ENTRIES = {
   },
 
   skills: {
-    kicker: "05 \u2014 Skills",
+    // kicker: "05 \u2014 Skills",
+    // kicker: "what i've learned !",
     title: "Skills",
     folio: "\u2014 05 \u2014",
     body: [
@@ -123,7 +127,8 @@ const ENTRIES = {
   },
 
   resume: {
-    kicker: "06 \u2014 R\u00e9sum\u00e9",
+    // kicker: "06 \u2014 R\u00e9sum\u00e9",
+    // kicker: "all in one place ! ",
     title: "R\u00e9sum\u00e9",
     folio: "\u2014 06 \u2014",
     body: [
@@ -134,7 +139,8 @@ const ENTRIES = {
   },
 
   interests: {
-    kicker: "07 \u2014 Interests",
+    // kicker: "07 \u2014 Interests",
+    // kicker: "things i'm always excited to talk about !",
     title: "Interests",
     folio: "\u2014 07 \u2014",
     body: [
@@ -149,7 +155,8 @@ const ENTRIES = {
   },
 
   hobbies: {
-    kicker: "08 \u2014 Hobbies",
+    // kicker: "08 \u2014 Hobbies",
+    // kicker: "on a personal note !",
     title: "Hobbies",
     folio: "\u2014 08 \u2014",
     body: [
@@ -164,11 +171,11 @@ const ENTRIES = {
   },
 
   contact: {
-    kicker: "09 \u2014 Contact",
-    title: "Get in Touch",
+    // kicker: "09 \u2014 Contact",
+    // kicker: "reach out to me !",
+    title: "Contact",
     folio: "\u2014 09 \u2014",
     body: [
-      { type: "paragraph", text: "Feel free to reach out \u2014 I'd love to hear from you." },
       { type: "list", items: [
         `Email \u2014 ${SITE_INFO.email}`,
         `LinkedIn \u2014 ${SITE_INFO.linkedin.replace("https://", "")}`,
