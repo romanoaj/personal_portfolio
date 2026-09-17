@@ -217,6 +217,12 @@ const ENTRIES = {
         meta: "September 2024 \u2013 June 2025",
         bullets: [ ""
         ]
+      },
+      {
+        heading: "Social Media Manager \u2014 Music Production Union, Cal Poly",
+        meta: "September 2023 \u2013 January 2025",
+        bullets: [ ""
+        ]
       }
     ]
   },
@@ -230,33 +236,61 @@ const ENTRIES = {
     ],
     entries: [
       {
-        heading: "Project One",
-        meta: "Tech stack placeholder \u2014 2026",
+        heading: "DabaCast | Language Learning Podcast App",
+        meta: "Tools used \u2014 2026",
         bullets: [
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "Duis aute irure dolor in reprehenderit in voluptate velit esse."
+          "Description goes here.",
+          "Description goes here."
         ]
       },
       {
-        heading: "Project Two",
-        meta: "Tech stack placeholder \u2014 2025",
+        heading: "Northern Spotted Owl Habitat Assessment",
+        meta: "Tools used \u2014 Spring 2026",
         bullets: [
-          "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
-          "Curabitur pretium tincidunt lacus, at velit vehicula bibendum."
+          "Description goes here.",
+          "Description goes here."
         ]
       },
       {
-        heading: "Project Three",
-        meta: "Tech stack placeholder \u2014 2025",
+        heading: "East Asian-Australasian Flyway Conservation Plan",
+        meta: "Tools used \u2014 Spring 2026",
         bullets: [
-          "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."
+          "Description goes here."
         ]
       },
       {
-        heading: "Project Four",
-        meta: "Tech stack placeholder \u2014 2024",
+        heading: "Soil Burn Severity Variable Importance Analysis",
+        meta: "Tools used \u2014 Winter 2026",
         bullets: [
-          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "Description goes here."
+        ]
+      },
+      {
+        heading: "4TheRecord | Mood Tracker and Diary Web App",
+        meta: "Tools used \u2014 Fall 2025",
+        bullets: [
+          "Description goes here."
+        ]
+      },
+      {
+        heading: "GeoTIFF Generator",
+        meta: "Tools used \u2014 Spring 2025",
+        bullets: [
+          "Description goes here."
+        ]
+      },
+      {
+        heading: "Cal Poly Arboretum Map",
+        meta: "Tools used \u2014 Spring 2025",
+        bullets: [
+          "Description goes here."
+        ]
+      },
+      {
+        heading: "Yoshida Family Farmstead Excavation | Archaeological Poster Presentation",
+        meta: "Tools used \u2014 Winter 2025",
+        bullets: [
+          "Description goes here."
         ]
       }
     ]
@@ -268,7 +302,7 @@ const ENTRIES = {
     title: "Skills",
     folio: "\u2014 06 \u2014",
     body: [
-      { type: "paragraph", text: "A short line about how you like to work, or what you'd want a hiring manager to know at a glance." },
+      // { type: "paragraph", text: "A short line about how you like to work, or what you'd want a hiring manager to know at a glance." },
       { type: "tags", label: "Research & methods", items: ["Placeholder", "Placeholder", "Placeholder"] },
       { type: "tags", label: "Technical", items: ["Placeholder", "Placeholder", "Placeholder", "Placeholder"] },
       { type: "tags", label: "Languages", items: ["Placeholder", "Placeholder"] }
@@ -278,43 +312,52 @@ const ENTRIES = {
   resume: {
     // kicker: "06 \u2014 R\u00e9sum\u00e9",
     // kicker: "all in one place ! ",
-    title: "R\u00e9sum\u00e9",
+    title: "Resume",
     folio: "\u2014 07 \u2014",
     body: [
-      { type: "paragraph", text: "The full picture \u2014 education, experience, and skills in one document. Download the PDF below, or reach out for a copy." },
-      { type: "button", label: "Download R\u00e9sum\u00e9 (PDF) \u2193", href: "assets/documents/resume.pdf" },
-      { type: "image", caption: "R\u00e9sum\u00e9 preview thumbnail", src: "assets/images/resume-preview.jpg" }
+      // { type: "paragraph", text: "The full picture \u2014 education, experience, and skills in one document. Download the PDF below, or reach out for a copy." },
+      { type: "button", label: "Download Resume (PDF) \u2193", href: "assets/documents/resume.pdf" },
+      { type: "image", caption: "Resume preview thumbnail", src: "assets/images/resume-preview.jpg" }
     ]
   },
 
-  interests: {
-    // kicker: "07 \u2014 Interests",
-    // kicker: "things i'm always excited to talk about !",
-    title: "Interests",
-    folio: "\u2014 08 \u2014",
-    body: [
-      { type: "paragraph", text: "A few things outside of work that keep showing up in how you think, make, or ask questions." },
-      { type: "list", items: [
-        "Placeholder interest one",
-        "Placeholder interest two",
-        "Placeholder interest three",
-        "Placeholder interest four"
-      ]}
-    ]
-  },
+  // interests: {
+  //   // kicker: "07 \u2014 Interests",
+  //   // kicker: "things i'm always excited to talk about !",
+  //   title: "Interests",
+  //   folio: "\u2014 08 \u2014",
+  //   body: [
+  //     { type: "paragraph", text: "A few things outside of work that keep showing up in how you think, make, or ask questions." },
+  //     { type: "list", items: [
+  //       "Placeholder interest one",
+  //       "Placeholder interest two",
+  //       "Placeholder interest three",
+  //       "Placeholder interest four"
+  //     ]}
+  //   ]
+  // },
 
   hobbies: {
     // kicker: "08 \u2014 Hobbies",
     // kicker: "on a personal note !",
-    title: "Hobbies",
-    folio: "\u2014 09 \u2014",
+    title: "Hobbies and Interests",
+    folio: "\u2014 08 \u2014",
     body: [
-      { type: "image", caption: "A candid, non-professional photo", src: "assets/images/hobbies-photo.jpg" },
+      { type: "image", caption: "pic of the plums", src: "assets/images/hobbies-photo.jpg" },
       { type: "list", items: [
-        "Placeholder hobby one",
-        "Placeholder hobby two",
-        "Placeholder hobby three",
-        "Placeholder hobby four"
+        "the plums"
+      ]},
+      { type: "image", caption: "pic of enamor", src: "assets/images/hobbies-photo.jpg" },
+      { type: "list", items: [
+        "enamor"
+      ]},
+      { type: "image", caption: "me outside", src: "assets/images/hobbies-photo.jpg" },
+      { type: "list", items: [
+        "hiking and stuff"
+      ]},
+      { type: "image", caption: "something relevant idk", src: "assets/images/hobbies-photo.jpg" },
+      { type: "list", items: [
+        "being crafty"
       ]}
     ]
   },
