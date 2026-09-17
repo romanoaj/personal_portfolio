@@ -38,6 +38,9 @@
   const folioEl  = document.getElementById("entryFolio");
 
   let lastFocusedEl = null;
+  let savedScrollX = 0;
+  let savedScrollY = 0;
+
 
   function escapeHTML(str) {
     const div = document.createElement("div");
@@ -201,41 +204,66 @@
 
   // ---- Entry detail popup (Research / Experience / Projects cards) ---
 
-  function openEntryModal(sectionId, index) {
-    const section = ENTRIES[sectionId];
-    const entry = section && section.entries && section.entries[index];
-    if (!entry) return;
+function openEntryModal(sectionId, index) {
+  const section = ENTRIES[sectionId];
+  const entry = section && section.entries && section.entries[index];
 
-    kickerEl.textContent = section.title || "";
-    titleEl.textContent = entry.heading || "";
+  if (!entry) return;
 
-    let html = "";
-    if (entry.meta) html += `<div class="meta">${escapeHTML(entry.meta)}</div>`;
-    if (entry.bullets) {
-      html += `<ul>${entry.bullets.map((b) => `<li>${escapeHTML(b)}</li>`).join("")}</ul>`;
-    }
-    bodyEl.innerHTML = html;
-    folioEl.textContent = section.folio || "";
+  kickerEl.textContent = section.title || "";
+  titleEl.textContent = entry.heading || "";
 
-    lastFocusedEl = document.activeElement;
-    overlay.classList.add("is-open");
-    document.documentElement.classList.add("no-scroll");
-    document.body.classList.add("no-scroll");
-    overlay.setAttribute("aria-hidden", "false");
+  let html = "";
 
-    entryEl.querySelector(".entry__scroll").scrollTop = 0;
-    closeBtn.focus();
+  if (entry.meta) {
+    html += `<div class="meta">${escapeHTML(entry.meta)}</div>`;
   }
 
-  function closeEntryModal() {
-    overlay.classList.remove("is-open");
-    document.documentElement.classList.remove("no-scroll");
-    document.body.classList.remove("no-scroll");
-    overlay.setAttribute("aria-hidden", "true");
-    if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
-      lastFocusedEl.focus();
-    }
+  if (entry.bullets) {
+    html += `<ul>${
+      entry.bullets
+        .map((bullet) => `<li>${escapeHTML(bullet)}</li>`)
+        .join("")
+    }</ul>`;
   }
+
+  bodyEl.innerHTML = html;
+  folioEl.textContent = section.folio || "";
+
+  lastFocusedEl = document.activeElement;
+  savedScrollX = window.scrollX;
+  savedScrollY = window.scrollY;
+
+  /*
+   * No body styles or no-scroll classes are changed.
+   * The popup simply appears over the existing page.
+   */
+  overlay.classList.add("is-open");
+  overlay.setAttribute("aria-hidden", "false");
+
+  entryEl.querySelector(".entry__scroll").scrollTop = 0;
+  closeBtn.focus({ preventScroll: true });
+}
+
+function closeEntryModal() {
+  overlay.classList.remove("is-open");
+  overlay.setAttribute("aria-hidden", "true");
+
+  /*
+   * This should normally be a no-op because the underlying page never moved.
+   * It also guards against an accidental background scroll.
+   */
+  window.scrollTo(savedScrollX, savedScrollY);
+
+  if (
+    lastFocusedEl &&
+    typeof lastFocusedEl.focus === "function"
+  ) {
+    lastFocusedEl.focus({ preventScroll: true });
+  }
+
+  lastFocusedEl = null;
+}
 
   closeBtn.addEventListener("click", closeEntryModal);
 

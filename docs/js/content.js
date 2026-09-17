@@ -65,12 +65,12 @@ const ENTRIES = {
       { type: "paragraph", text: "Hello! My name is Ava. Thanks for taking the time to visit my page!" },
       { type: "paragraph", text: "I was born and raised in Seattle, Washington (the most beautiful place on Earth). \
         I'm currently in my last year of college at Cal Poly - San Luis Obispo, where I'm double majoring in Computer Science and Geography. \
-        People often remark that my two majors seem very different, and in some ways, they are. However, throughout my college experience, I've \
-        continually been reminded of how my knowledge of one discipline deepens my understand of another, and gives me unique angles at which to view problems. \
+        People often remark that my two majors seem very different, and in some ways, they are. However, throughout my college experience, I'm \
+        continually reminded of how my knowledge of one discipline deepens my understanding of another and gives me unique angles at which to view problems. \
         I am endlessly grateful I've been able to study two topics which I'm so interested in, and have had opportunities to apply my knowledge of both \
         to my research and personal projects." },
       { type: "paragraph", text: "I define myself by my curiosity. I believe in learning for the sake of learning. I aspire to be in roles which let me \
-        utilize both my computer science and GIS skills, which continually push me to grow and ask questions, and which involve interdisciplinary team collaboration."}
+        utilize both my computer science and GIS background, continually push me to grow and ask questions, and involve interdisciplinary team collaboration."}
       // { type: "quote", text: "A short personal motto or line you like goes here." }
     ]
   },
@@ -88,7 +88,8 @@ const ENTRIES = {
       {
         heading: "Soil Burn Severity AI/ML Assessment Map",
         // meta: "Journal / Conference placeholder \u2014 Year",
-        bullets: ["A remote-sensing powered machine learning model.", 
+        teaser: ["A remote-sensing powered machine learning model."],
+        bullets: [ 
           "Using Google Earth Engine, we developed a machine learning model which uses optical remote sensing \
           indices, synthetic aperture radar, and environmental, weather, and terrain covariates to predict the soil burn severity of given geographic \
           areas in the wake of wildfire events.",
@@ -98,8 +99,9 @@ const ENTRIES = {
           weather patterns."]
       },
       {
-        heading: "DamageMap, a Post-Wildfire Damage Assessment Tool",
+        heading: "DamageMap, Web App",
         // meta: "Journal / Conference placeholder \u2014 Year",
+        teaser: ["A post-wildfire damage assessment tool."],
         bullets: ["Aided in iterative software development, model refinement, and application deployment of a computer vision machine learning model \
           which employs satellite imagery to identify structures damaged in wildfire events."]
       }
@@ -140,8 +142,8 @@ const ENTRIES = {
       {
         heading: "Undergraduate Researcher \u2014 Geoinformatics Lab, Cal Poly",
         meta: "January 2026 \u2013 Present",
+        teaser: ["Research with an interdiscipinary team of students, professors, and industry specialists."],
         bullets: [
-          "Worked on an interdiscipinary team of students and professors",
           "Projects include a soil burn severity AI/ML model, and a post-wildfire damage assessment tool",
           "See the 'Research' section for more details!"
         ]
@@ -149,6 +151,7 @@ const ENTRIES = {
       {
         heading: "Tech Lead \u2014 Hack4Impact, Cal Poly Chapter",
         meta: "September 2026 \u2013 Present",
+        teaser: ["Technical team leadership, project management, and communication support."],
         bullets: [ "Managed a team of 10 developers with my co-lead to drive development of a web-app for a nonprofit.",
           "Hack4Impact is a student organization which pairs nonprofit organizations with student teams who spend a year \
           developing a website for the organization. Each team is 8-10 developers, one product manager, a few UX/UI designers,\
@@ -169,8 +172,9 @@ const ENTRIES = {
       {
         heading: "Remote Sensing Teaching Assistant \u2014 Cal Poly",
         meta: "August 2026 \u2013 Present",
-        bullets: [ "Assisted students in class with any and all remote sensing-related needs!",
-          "Helped with satellite data acquisition and processing, answered questions, and advised in-class projects.",
+        teaser: ["Assisting students in class with any and all remote sensing-related needs!"],
+        bullets: [
+          "Helping with satellite data acquisition and processing, answering questions, and advising in-class projects.",
           "Fun fact! Remote sensing is one of my favorite classes I've taken at Cal Poly, so the opportunity to be \
           a TA for it has been very rewarding.",
           "Beyond my interest in the subject itself, I love to be a part of others' learning processes, whatever that \
@@ -180,8 +184,14 @@ const ENTRIES = {
       },
       {
         heading: "Volunteer Barista \u2014 Front Porch, San Luis Obispo",
-        meta: "June 2025 \u2013 July 2025",
-        bullets: [ ""
+        meta: "January 2024 \u2013 July 2025",
+        teaser: ["Coffee and chit-chat!"],
+        bullets: [ "For the past few years, I've spent one hour each week making coffee, espresso beverages, and tea for \
+          visitors of Front Porch, a nonprofit volunteer-based cafe near Cal Poly's campus.",
+          "Front Porch has been one of the most valuable community spaces I've been a part of in my time at college. Their mission \
+          and values prioritize fostering a safe and welcoming space for students from all backgrounds. I spend countless hours there \
+          every week studying, drinking coffee, making coffee, seeing friends, playing music, and more. Its value as a third space and \
+          community center is immeasurable to me."
         ]
       },
       {

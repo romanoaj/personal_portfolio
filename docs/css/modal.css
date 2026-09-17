@@ -5,6 +5,8 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
   background: rgba(43,40,34,0.74);
   display: flex;
   align-items: center;
@@ -67,6 +69,7 @@
 .entry__scroll {
   max-height: 88vh;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: clamp(2.2rem, 5vw, 3.2rem) clamp(1.8rem, 5vw, 3.2rem) clamp(2.4rem, 5vw, 3rem);
 }
 
