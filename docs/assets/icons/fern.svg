@@ -1,0 +1,16 @@
+<svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+  <path d="M60 196 C58 150 58 100 60 20" />
+  <path d="M60 40 C50 34 38 34 28 42" />
+  <path d="M60 55 C48 48 34 48 22 58" />
+  <path d="M60 70 C46 62 30 63 16 74" />
+  <path d="M60 85 C45 76 28 78 12 90" />
+  <path d="M60 100 C44 90 26 93 9 106" />
+  <path d="M60 115 C44 104 25 108 7 122" />
+  <path d="M60 40 C70 34 82 34 92 42" />
+  <path d="M60 55 C72 48 86 48 98 58" />
+  <path d="M60 70 C74 62 90 63 104 74" />
+  <path d="M60 85 C75 76 92 78 108 90" />
+  <path d="M60 100 C76 90 94 93 111 106" />
+  <path d="M60 115 C76 104 95 108 113 122" />
+  <path d="M60 20 C56 14 56 8 60 4 C64 8 64 14 60 20 Z" />
+</svg>
