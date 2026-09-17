@@ -8,21 +8,38 @@
  * SITE_INFO — name, tagline, and contact links used in the header,
  * hero, and footer.
  *
- * ENTRIES — one object per popup, keyed by the id used in each
- * data-entry="..." attribute in index.html. Each entry has:
- *   kicker : string   — small label at the top, e.g. "01 — About"
- *   title  : string   — big italic heading
- *   folio  : string   — small page-number-style detail at the bottom
- *   body   : Block[]  — an ordered list of content blocks, rendered
- *                        top to bottom. Supported block types:
+ * ENTRIES — one object per section in the "Contents" index, keyed by
+ * the id used in each data-entry="..." attribute in index.html.
  *
+ * Two shapes of section, depending on how it should behave when opened:
+ *
+ *   1) SIMPLE DROPDOWN (about, education, skills, resume, interests,
+ *      hobbies, contact) — clicking the row opens it right there on the
+ *      page. Shape:
+ *        { title, folio, body: Block[] }
+ *
+ *   2) CARD-GRID SECTION (research, experience, projects) — clicking the
+ *      row opens a grid of small cards, two per row; clicking a card
+ *      opens a popup with that one entry's full detail. Shape:
+ *        { title, folio, intro?: Block[], entries: Entry[] }
+ *      where an Entry is:
+ *        { heading, meta, bullets, teaser? }
+ *      `teaser` is the one-line preview shown on the card; if you leave
+ *      it out, the first bullet is used instead.
+ *
+ * Block types (used in `body` and `intro`):
  *   { type: "paragraph", text }
- *   { type: "image", caption }                 -> placeholder box
- *   { type: "quote", text }                     -> italic pull-quote
- *   { type: "tags", label, items: [...] }       -> a row of chip tags
- *   { type: "entry", heading, meta, bullets }   -> a job/degree/project
- *   { type: "list", items: [...] }              -> a plain bullet list
- *   { type: "button", label, href }             -> a pill link/button
+ *   { type: "image", caption, src }              -> real photo, or a
+ *                                                    placeholder until
+ *                                                    that file exists
+ *   { type: "quote", text }                        -> italic pull-quote
+ *   { type: "tags", label, items: [...] }           -> a row of chip tags
+ *   { type: "entry", heading, meta, bullets }       -> an inline job/degree
+ *                                                       (used by Education,
+ *                                                       which stays a plain
+ *                                                       dropdown, not cards)
+ *   { type: "list", items: [...] }                  -> a plain bullet list
+ *   { type: "button", label, href }                 -> a pill link/button
  * -----------------------------------------------------------------------
  */
 
@@ -43,10 +60,15 @@ const ENTRIES = {
     folio: "\u2014 01 \u2014",
     body: [
       { type: "image", caption: "Portrait photo", src: "assets/images/about-portrait.jpg" },
-      { type: "paragraph", text: "Hello!" },
-      { type: "paragraph", text: "My name is Ava. I was born and raised in Seattle, Washington (the most beautiful place on Earth). I'm currently a student at Cal Poly - San Luis Obispo, where I'm double majoring in Computer Science and Geography." },
-      { type: "paragraph", text: "I define myself by my curiosity. I love to ask questions, broaden my worldview, and make interdisciplinary connections." },
-      { type: "paragraph", text: "I often get asked why I'm double majoring in two seemingly very different topics, and the answer is simple -- I really love both. I believe my understanding of topics in one discipline enhances my ability to make connections in another." }
+      { type: "paragraph", text: "Hello! My name is Ava. Thanks for taking the time to visit my page!" },
+      { type: "paragraph", text: "I was born and raised in Seattle, Washington (the most beautiful place on Earth). \
+        I'm currently in my last year of college at Cal Poly - San Luis Obispo, where I'm double majoring in Computer Science and Geography. \
+        People often remark that my two majors seem very different, and in some ways, they are. However, throughout my college experience, I've \
+        continually been reminded of how my knowledge of one discipline deepens my understand of another, and gives me unique angles at which to view problems. \
+        I am endlessly grateful I've been able to study two topics which I'm so interested in, and have had opportunities to apply my knowledge of both \
+        to my research and personal projects." },
+      { type: "paragraph", text: "I define myself by my curiosity. I believe in learning for the sake of learning. I aspire to be in roles which let me \
+        utilize both my computer science and GIS skills, which continually push me to grow and ask questions, and which involve interdisciplinary team collaboration."}
       // { type: "quote", text: "A short personal motto or line you like goes here." }
     ]
   },
@@ -55,18 +77,29 @@ const ENTRIES = {
     // kicker: "i could talk about this all day !",
     title: "Research",
     folio: "\u2014 02 \u2014",
-    body: [
-      { type: "paragraph", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit \u2014 a short introduction to your research interests and the questions you find yourself drawn to." },
-      { type: "tags", label: "Areas of interest", items: ["Placeholder area", "Placeholder area", "Placeholder area", "Placeholder area"] },
-      { type: "entry",
-        heading: "Publication or Project Title",
-        meta: "Journal / Conference placeholder \u2014 Year",
-        bullets: ["Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."]
+    intro: [
+      { type: "paragraph", text: "At Cal Poly, I've had the opportunity to work on an undergraduate research team which tackles issues \
+        that lie in the intersection of Deep Learning and GIS." },
+      { type: "tags", label: "Research Interests", items: ["Remote Sensing", "Machine Learning", "Computer Vision", "Wildfire Monitoring", "Environmental Conservation"] }
+    ],
+    entries: [
+      {
+        heading: "Soil Burn Severity AI/ML Assessment Map",
+        // meta: "Journal / Conference placeholder \u2014 Year",
+        bullets: ["A remote-sensing powered machine learning model.", 
+          "Using Google Earth Engine, we developed a machine learning model which uses optical remote sensing \
+          indices, synthetic aperture radar, and environmental, weather, and terrain covariates to predict the soil burn severity of given geographic \
+          areas in the wake of wildfire events.",
+          "Soil burn severity is a major landslide risk factor, and with wildfires increasing in frequency and intensity each year, it has become increasingly \
+          imperative to have accurate soil burn severity measurements so as to better predict which burned areas are most at-risk of landslides.",
+          "In addition to landslide implications, modelling soil burn severity is important for monitoring environmental conditions, forest health, and climate change \
+          weather patterns."]
       },
-      { type: "entry",
-        heading: "Publication or Project Title",
-        meta: "Journal / Conference placeholder \u2014 Year",
-        bullets: ["Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."]
+      {
+        heading: "DamageMap, a Post-Wildfire Damage Assessment Tool",
+        // meta: "Journal / Conference placeholder \u2014 Year",
+        bullets: ["Aided in iterative software development, model refinement, and application deployment of a computer vision machine learning model \
+          which employs satellite imagery to identify structures damaged in wildfire events."]
       }
     ]
   },
@@ -79,13 +112,20 @@ const ENTRIES = {
       { type: "entry",
         heading: "Bachelor's of Science in Computer Science \u2014 Cal Poly SLO",
         meta: "2022 \u2013 2027",
-        bullets: ["Areas of Interest: Computer Vision, Machine Learning"]
-        
+        bullets: ["Areas of Interest: Computer Vision, Machine Learning",
+          "Relevant Coursework: Data Structures, Systems Programming, Operating Systems, \
+          Design and Analysis of Algorithms, Database Management, Software Engineering, \
+          Computer Vision."
+        ]
+
       },
       { type: "entry",
         heading: "Bachelor's of Science in Geography and Anthropology \u2014 Cal Poly SLO",
         meta: "2022 \u2013 2027",
-        bullets: ["Areas of Interest: GIS, Remote Sensing, Environmental Conservation Research"]
+        bullets: ["Areas of Interest: GIS, Remote Sensing, Environmental Conservation Research",
+          "Relevant Coursework: Intro and Advanced GIS, Biogeography and Biodiversity Methods, \
+          Remote Sensing."
+        ]
       }
     ]
   },
@@ -94,20 +134,129 @@ const ENTRIES = {
     // kicker: "applying the skills !",
     title: "Experience",
     folio: "\u2014 04 \u2014",
-    body: [
-      { type: "entry",
-        heading: "Job Title \u2014 Organization",
-        meta: "Month Year \u2013 Present",
+    entries: [
+      {
+        heading: "Undergraduate Researcher \u2014 Geoinformatics Lab, Cal Poly",
+        meta: "January 2026 \u2013 Present",
         bullets: [
-          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+          "Worked on an interdiscipinary team of students and professors",
+          "Projects include a soil burn severity AI/ML model, and a post-wildfire damage assessment tool",
+          "See the 'Research' section for more details!"
         ]
       },
-      { type: "entry",
-        heading: "Job Title \u2014 Organization",
-        meta: "Month Year \u2013 Month Year",
+      {
+        heading: "Tech Lead \u2014 Hack4Impact, Cal Poly Chapter",
+        meta: "September 2026 \u2013 Present",
+        bullets: [ "Managed a team of 10 developers with my co-lead to drive development of a web-app for a nonprofit.",
+          "Hack4Impact is a student organization which pairs nonprofit organizations with student teams who spend a year \
+          developing a website for the organization. Each team is 8-10 developers, one product manager, a few UX/UI designers,\
+          and two tech leads.",
+          "As a tech lead, my output was the team's output. This meant it was my responsibility to keep the team \
+          on schedule and in constant communication with one another.",
+          "Logistically, this meant holding weekly progress check-in meetings, clarifying technical specs and requirements, \
+          performing code review, and approving pull requests.",
+          "The role of tech lead is equal parts technical and managerial. So, in addition to all technical tasks listed above, my \
+          role was just as much about meeting each person on my team where they're at, understanding how to support them, and \
+          learning how to manage a team of varying skill levels so that each developer learns and improves while still producing \
+          viable end product.",
+          "The part of this role I enjoyed most was working with people and making them feel heard, all while utilizing my \
+          technical skills for advising, ensuring clean code, and working towards an end product that would have a real impact \
+          on an actual nonprofit organization!"
+        ]
+      },
+      {
+        heading: "Remote Sensing Teaching Assistant \u2014 Cal Poly",
+        meta: "August 2026 \u2013 Present",
+        bullets: [ "Assisted students in class with any and all remote sensing-related needs!",
+          "Helped with satellite data acquisition and processing, answered questions, and advised in-class projects.",
+          "Fun fact! Remote sensing is one of my favorite classes I've taken at Cal Poly, so the opportunity to be \
+          a TA for it has been very rewarding.",
+          "Beyond my interest in the subject itself, I love to be a part of others' learning processes, whatever that \
+          may look like. Explaining tricky concepts, brainstorming project ideas, and generally helping others in any way\
+          brings me a lot of joy!"
+        ]
+      },
+      {
+        heading: "Volunteer Barista \u2014 Front Porch, San Luis Obispo",
+        meta: "June 2025 \u2013 July 2025",
+        bullets: [ ""
+        ]
+      },
+      {
+        heading: "AWS Application Developer \u2014 California Cybersecurity Institute, Cal Poly",
+        meta: "September 2025 \u2013 June 2026",
+        bullets: [ ""
+        ]
+      },
+      {
+        heading: "GIS Intern \u2014 AppliedEarthworks",
+        meta: "June 2025 \u2013 September 2025",
+        bullets: [ ""
+        ]
+      },
+      {
+        heading: "Archaeological Field School \u2014 Edmonds Community College, Washington",
+        meta: "June 2025 \u2013 July 2025",
+        bullets: [ ""
+        ]
+      },
+       {
+        heading: "Usability and Integration eLearning Assistant \u2014 Office of Student Research, Cal Poly",
+        meta: "January 2025 \u2013 June 2025",
+        bullets: [ ""
+        ]
+      },
+      {
+        heading: "LiDar Drone Technician Assistant \u2014 Geospatial Systems Lab, Cal Poly",
+        meta: "April 2025 \u2013 June 2025",
+        bullets: [ ""
+        ]
+      },
+      {
+        heading: "College of Liberal Arts Student Advisory Council Member \u2014 Cal Poly",
+        meta: "September 2024 \u2013 June 2025",
+        bullets: [ ""
+        ]
+      }
+    ]
+  },
+
+  projects: {
+    // kicker: "things i've built !",
+    title: "Projects",
+    folio: "\u2014 05 \u2014",
+    intro: [
+      { type: "paragraph", text: "A few things I've built, from class projects to things made just out of curiosity." }
+    ],
+    entries: [
+      {
+        heading: "Project One",
+        meta: "Tech stack placeholder \u2014 2026",
         bullets: [
-          "Curabitur pretium tincidunt lacus, at velit vehicula bibendum eget nunc."
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+          "Duis aute irure dolor in reprehenderit in voluptate velit esse."
+        ]
+      },
+      {
+        heading: "Project Two",
+        meta: "Tech stack placeholder \u2014 2025",
+        bullets: [
+          "Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+          "Curabitur pretium tincidunt lacus, at velit vehicula bibendum."
+        ]
+      },
+      {
+        heading: "Project Three",
+        meta: "Tech stack placeholder \u2014 2025",
+        bullets: [
+          "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices."
+        ]
+      },
+      {
+        heading: "Project Four",
+        meta: "Tech stack placeholder \u2014 2024",
+        bullets: [
+          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ]
       }
     ]
@@ -117,7 +266,7 @@ const ENTRIES = {
     // kicker: "05 \u2014 Skills",
     // kicker: "what i've learned !",
     title: "Skills",
-    folio: "\u2014 05 \u2014",
+    folio: "\u2014 06 \u2014",
     body: [
       { type: "paragraph", text: "A short line about how you like to work, or what you'd want a hiring manager to know at a glance." },
       { type: "tags", label: "Research & methods", items: ["Placeholder", "Placeholder", "Placeholder"] },
@@ -130,7 +279,7 @@ const ENTRIES = {
     // kicker: "06 \u2014 R\u00e9sum\u00e9",
     // kicker: "all in one place ! ",
     title: "R\u00e9sum\u00e9",
-    folio: "\u2014 06 \u2014",
+    folio: "\u2014 07 \u2014",
     body: [
       { type: "paragraph", text: "The full picture \u2014 education, experience, and skills in one document. Download the PDF below, or reach out for a copy." },
       { type: "button", label: "Download R\u00e9sum\u00e9 (PDF) \u2193", href: "assets/documents/resume.pdf" },
@@ -142,7 +291,7 @@ const ENTRIES = {
     // kicker: "07 \u2014 Interests",
     // kicker: "things i'm always excited to talk about !",
     title: "Interests",
-    folio: "\u2014 07 \u2014",
+    folio: "\u2014 08 \u2014",
     body: [
       { type: "paragraph", text: "A few things outside of work that keep showing up in how you think, make, or ask questions." },
       { type: "list", items: [
@@ -158,7 +307,7 @@ const ENTRIES = {
     // kicker: "08 \u2014 Hobbies",
     // kicker: "on a personal note !",
     title: "Hobbies",
-    folio: "\u2014 08 \u2014",
+    folio: "\u2014 09 \u2014",
     body: [
       { type: "image", caption: "A candid, non-professional photo", src: "assets/images/hobbies-photo.jpg" },
       { type: "list", items: [
@@ -174,13 +323,12 @@ const ENTRIES = {
     // kicker: "09 \u2014 Contact",
     // kicker: "reach out to me !",
     title: "Contact",
-    folio: "\u2014 09 \u2014",
+    folio: "\u2014 10 \u2014",
     body: [
       { type: "list", items: [
         `Email \u2014 ${SITE_INFO.email}`,
         `LinkedIn \u2014 ${SITE_INFO.linkedin.replace("https://", "")}`,
-        `GitHub \u2014 ${SITE_INFO.github.replace("https://", "")}`,
-        `Location \u2014 ${SITE_INFO.location}`
+        `GitHub \u2014 ${SITE_INFO.github.replace("https://", "")}`
       ]}
     ]
   }

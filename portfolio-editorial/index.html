@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ava Romano \u2014 Portfolio</title>
-<meta name="description" content="Portfolio of Your Name \u2014 research, experience, and work.">
+<title>Ava Romano &mdash; Portfolio</title>
+<meta name="description" content="Portfolio of Ava Romano &mdash; research, experience, and work.">
 
 <!-- Open Graph: makes the link preview nicely on LinkedIn / Slack / iMessage -->
-<meta property="og:title" content="Your Name \u2014 Portfolio">
+<meta property="og:title" content="Ava Romano &mdash; Portfolio">
 <meta property="og:description" content="Research, experience, and work.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/images/og-image.jpg">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2393A683'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F8F4EA' font-family='Georgia,serif'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2393A683'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F8F4EA' font-family='Georgia,serif'%3EA%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,10 +50,10 @@
           Portfolio &amp; Professional Summary
         </p>
         <h1 class="hero__name" data-site="name">Your Name</h1>
-        <p class="hero__role" data-site="role">Researcher \u00b7 Writer \u00b7 Designer</p>
+        <p class="hero__role" data-site="role">Researcher &middot; Writer &middot; Designer</p>
         <p class="hero__intro">
-          Current Computer Science and Geography double-major at Cal Poly SLO, an aspiring geospatial developer,
-           a remote sensing enthusiast, and an all-around curious soul!
+          Current Computer Science and Geography double-major at Cal Poly SLO, aspiring geospatial developer,
+           remote sensing enthusiast, and all-around curious person!
         </p>
       </div>
 
@@ -75,68 +75,107 @@
       </div>
 
       <ul class="index-list">
-        <li><button type="button" class="index-row" data-entry="about">
-          <span class="index-row__num label">01</span>
-          <span class="index-row__title">About Me</span>
-          <span class="index-row__teaser">An introduction to who I am and my background!</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
 
-        <li><button type="button" class="index-row" data-entry="research">
-          <span class="index-row__num label">02</span>
-          <span class="index-row__title">Research</span>
-          <span class="index-row__teaser">Questions I love to ponder, problems I'd like to solve.</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="about" aria-expanded="false" aria-controls="panel-about">
+            <span class="index-row__num label">01</span>
+            <span class="index-row__title">About Me</span>
+            <span class="index-row__teaser">An introduction to who I am and my background!</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-about" data-panel="about"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="education">
-          <span class="index-row__num label">03</span>
-          <span class="index-row__title">Education</span>
-          <span class="index-row__teaser">Though learning is a lifelong pursuit...</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="research" aria-expanded="false" aria-controls="panel-research">
+            <span class="index-row__num label">02</span>
+            <span class="index-row__title">Research</span>
+            <span class="index-row__teaser">Questions I love to ponder, problems I'd like to solve.</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-research" data-panel="research"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="experience">
-          <span class="index-row__num label">04</span>
-          <span class="index-row__title">Experience</span>
-          <span class="index-row__teaser">Roles and responsibilities I've held.</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="education" aria-expanded="false" aria-controls="panel-education">
+            <span class="index-row__num label">03</span>
+            <span class="index-row__title">Education</span>
+            <span class="index-row__teaser">Though learning is a lifelong pursuit...</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-education" data-panel="education"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="skills">
-          <span class="index-row__num label">05</span>
-          <span class="index-row__title">Skills</span>
-          <span class="index-row__teaser">Methods, tools, and languages I utilize.</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="experience" aria-expanded="false" aria-controls="panel-experience">
+            <span class="index-row__num label">04</span>
+            <span class="index-row__title">Experience</span>
+            <span class="index-row__teaser">Roles and responsibilities I've held.</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-experience" data-panel="experience"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="resume">
-          <span class="index-row__num label">06</span>
-          <span class="index-row__title">Resume</span>
-          <span class="index-row__teaser">All of me in one place.</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="projects" aria-expanded="false" aria-controls="panel-projects">
+            <span class="index-row__num label">05</span>
+            <span class="index-row__title">Projects</span>
+            <span class="index-row__teaser">Things I've built, from class projects to side quests.</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-projects" data-panel="projects"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="interests">
-          <span class="index-row__num label">07</span>
-          <span class="index-row__title">Interests</span>
-          <span class="index-row__teaser">I could talk about these all day!</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="skills" aria-expanded="false" aria-controls="panel-skills">
+            <span class="index-row__num label">06</span>
+            <span class="index-row__title">Skills</span>
+            <span class="index-row__teaser">Methods, tools, and languages I utilize.</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-skills" data-panel="skills"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="hobbies">
-          <span class="index-row__num label">08</span>
-          <span class="index-row__title">Hobbies</span>
-          <span class="index-row__teaser">On a more personal note...</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="resume" aria-expanded="false" aria-controls="panel-resume">
+            <span class="index-row__num label">07</span>
+            <span class="index-row__title">Resume</span>
+            <span class="index-row__teaser">All of me in one place.</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-resume" data-panel="resume"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
 
-        <li><button type="button" class="index-row" data-entry="contact">
-          <span class="index-row__num label">09</span>
-          <span class="index-row__title">Contact</span>
-          <span class="index-row__teaser">Reach out anytime!</span>
-          <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
-        </button></li>
+        <li>
+          <button type="button" class="index-row" data-entry="interests" aria-expanded="false" aria-controls="panel-interests">
+            <span class="index-row__num label">08</span>
+            <span class="index-row__title">Interests</span>
+            <span class="index-row__teaser">I could talk about these all day!</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-interests" data-panel="interests"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
+
+        <li>
+          <button type="button" class="index-row" data-entry="hobbies" aria-expanded="false" aria-controls="panel-hobbies">
+            <span class="index-row__num label">09</span>
+            <span class="index-row__title">Hobbies</span>
+            <span class="index-row__teaser">On a more personal note...</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-hobbies" data-panel="hobbies"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
+
+        <li>
+          <button type="button" class="index-row" data-entry="contact" aria-expanded="false" aria-controls="panel-contact">
+            <span class="index-row__num label">10</span>
+            <span class="index-row__title">Contact</span>
+            <span class="index-row__teaser">Reach out anytime!</span>
+            <span class="index-row__arrow" aria-hidden="true">&#8594;</span>
+          </button>
+          <div class="index-panel" id="panel-contact" data-panel="contact"><div class="index-panel__inner"><div class="index-panel__content"></div></div></div>
+        </li>
+
       </ul>
     </div>
   </section>
@@ -163,7 +202,7 @@
   </div>
 </footer>
 
-<!-- ================= ENTRY POPUP ================= -->
+<!-- ================= ENTRY DETAIL POPUP (used by Research / Experience / Projects cards) ================= -->
 <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
   <div class="entry" id="entryPanel" role="dialog" aria-modal="true" aria-labelledby="entryTitle">
     <button type="button" class="entry__close" id="entryClose" aria-label="Close">Close &#10005;</button>
