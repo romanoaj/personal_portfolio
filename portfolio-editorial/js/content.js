@@ -48,7 +48,9 @@ const SITE_INFO = {
   role: "Student \u00b7 Researcher \u00b7 Human",
   email: "ajromano@calpoly.edu",
   linkedin: "https://www.linkedin.com/in/ava-romano-593b66241/",
-  github: "https://github.com/romanoaj"
+  github: "https://github.com/romanoaj",
+  header: "Welcome!",
+  footer: "See you next time!"
 };
 
 const ENTRIES = {
@@ -368,12 +370,12 @@ const ENTRIES = {
     title: "Contact",
     folio: "\u2014 10 \u2014",
     body: [
-      { type: "list", items: [
-        `Email \u2014 ${SITE_INFO.email}`,
-        `LinkedIn \u2014 ${SITE_INFO.linkedin.replace("https://", "")}`,
-        `GitHub \u2014 ${SITE_INFO.github.replace("https://", "")}`
-      ]}
-    ]
+    { type: "links", items: [
+      { prefix: "Email \u2014 ", text: SITE_INFO.email, href: `mailto:${SITE_INFO.email}` },
+      { prefix: "LinkedIn \u2014 ", text: SITE_INFO.linkedin.replace("https://", ""), href: SITE_INFO.linkedin, external: true },
+      { prefix: "GitHub \u2014 ", text: SITE_INFO.github.replace("https://", ""), href: SITE_INFO.github, external: true }
+    ]}
+  ]
   }
 
 };

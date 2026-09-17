@@ -70,6 +70,7 @@
                      `<span class="entry__image-fallback">\uD83C\uDFDE\uFE0F&nbsp; ${caption} &mdash; add a file at ${src}</span>` +
                    `</div>`;
           }
+          
           return `<div class="entry__image is-missing"><span class="entry__image-fallback">\uD83C\uDFDE\uFE0F&nbsp; ${caption}</span></div>`;
         }
 
@@ -92,6 +93,17 @@
 
         case "list": {
           const items = (block.items || []).map((i) => `<li>${escapeHTML(i)}</li>`).join("");
+          return `<ul>${items}</ul>`;
+        }
+
+        case "links": {
+          const items = (block.items || []).map((i) => {
+            const prefix = i.prefix ? escapeHTML(i.prefix) : "";
+            const text = escapeHTML(i.text);
+            const href = escapeHTML(i.href);
+            const extra = i.external ? ' target="_blank" rel="noopener"' : "";
+            return `<li>${prefix}<a href="${href}"${extra}>${text}</a></li>`;
+          }).join("");
           return `<ul>${items}</ul>`;
         }
 
